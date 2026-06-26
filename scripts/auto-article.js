@@ -106,7 +106,7 @@ async function fetchRakutenProducts(keyword, count = 3) {
     const affiliateId = process.env.RAKUTEN_AFFILIATE_ID;
     if (affiliateId) params.set("affiliateId", affiliateId);
 
-    const url = `https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?${params.toString()}`;
+    const url = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401?${params.toString()}`;
     const data = await httpsGet(url);
 
     if (!data.Items || data.Items.length === 0) return [];

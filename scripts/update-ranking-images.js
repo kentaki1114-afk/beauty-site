@@ -41,7 +41,7 @@ async function fetchImageUrl(keyword, isFirst = false) {
   if (accessKey) params.set("accessKey", accessKey);
   if (process.env.RAKUTEN_AFFILIATE_ID) params.set("affiliateId", process.env.RAKUTEN_AFFILIATE_ID);
 
-  const apiUrl = `https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?${params}`;
+  const apiUrl = `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401?${params}`;
 
   try {
     const data = await httpsGet(apiUrl);
