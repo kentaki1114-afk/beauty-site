@@ -24,6 +24,7 @@ jobs:
       - name: ランキング画像を更新
         env:
           RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
           RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
           CI: true
         run: node scripts/update-ranking-images.js

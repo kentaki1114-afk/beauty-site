@@ -30,6 +30,7 @@ function httpsGet(url) {
 
 async function fetchImageUrl(keyword, isFirst = false) {
   const appId = process.env.RAKUTEN_APP_ID;
+  const accessKey = process.env.RAKUTEN_ACCESS_KEY;
   const params = new URLSearchParams({
     applicationId: appId,
     keyword,
@@ -37,6 +38,7 @@ async function fetchImageUrl(keyword, isFirst = false) {
     imageFlag: "1",
     formatVersion: "2",
   });
+  if (accessKey) params.set("accessKey", accessKey);
   if (process.env.RAKUTEN_AFFILIATE_ID) params.set("affiliateId", process.env.RAKUTEN_AFFILIATE_ID);
 
   const apiUrl = `https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?${params}`;

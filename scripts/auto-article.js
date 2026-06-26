@@ -101,6 +101,8 @@ async function fetchRakutenProducts(keyword, count = 3) {
       imageFlag: "1",
       formatVersion: "2",
     });
+    const accessKey = process.env.RAKUTEN_ACCESS_KEY;
+    if (accessKey) params.set("accessKey", accessKey);
     const affiliateId = process.env.RAKUTEN_AFFILIATE_ID;
     if (affiliateId) params.set("affiliateId", affiliateId);
 
